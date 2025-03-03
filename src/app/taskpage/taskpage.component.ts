@@ -16,7 +16,7 @@ export class TaskpageComponent {
   taskEndTime = "";
   taskIntensity = "";
   taskThemeSet = "";
-  taskThemes = ["Study", "Sunshine", "Danger", "Robot", "Clock", "Night", "Horror", "Forest"];
+  taskThemes = ["Study", "Sunshine", "Danger", "Robot", "Clock", "Horror", "Forest"];
   taskList = [{
     task: "sampleTask",
     endDate: "",
@@ -106,7 +106,7 @@ export class TaskpageComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     if (Number(event.innerWidth) < 1200) {
-      this.showPage = true;
+      this.showPage = false;
     } else {
       this.showPage = true;
     }

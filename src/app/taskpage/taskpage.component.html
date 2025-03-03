@@ -65,13 +65,16 @@
                 </div>
             </div>
             <div class="taskerDisplayTaskParentCls">
-                <div *ngFor="let task of taskList" class="taskDisItemParentCls" [ngClass]="'todo' + task.theme + 'ThemeCls'">
-                    <div class="taskCardCls" [ngClass]="'todo' + task.intensity + 'IntensityCls'">
-                        <div class="taskTitleCls"><p>{{task.task}}</p></div>
-                        <div class="taskIntensityCls"><p>{{task.intensity}}</p></div>
-                        <div class="taskBtnGroupCls">
-                            <div class="taskBtnCollectionCls">
-                                <button (click)="taskCompleted($event, task.task)" class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone">Done</button>
+                <div *ngFor="let task of taskList" class="todoTaskHeadCls" [ngClass]="'todoTasker' + task.theme + 'ThemeHeadCls todoTasker'+ task.intensity + 'IntenseHeadCls'">
+                    <div class="taskCardCls" [ngClass]="'todoIntenseTaskComLogo todo' + task.theme + 'ThemeLogoCls'"></div>
+                    <div class="taskDisItemParentCls" [ngClass]="'todo' + task.theme + 'ThemeCls'">
+                        <div class="taskCardCls" [ngClass]="'todo' + task.intensity + 'IntensityCls'">
+                            <div class="taskTitleCls"><p>{{task.task}}</p></div>
+                            <div class="taskIntensityCls"><p>{{task.intensity}}</p></div>
+                            <div class="taskBtnGroupCls">
+                                <div class="taskBtnCollectionCls">
+                                    <button (click)="taskCompleted($event, task.task)" class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone">Done</button>
+                                </div>
                             </div>
                         </div>
                     </div>
