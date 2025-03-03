@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+:root,
+body, main, section {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+.taskerSecHeadCls {
+    width: 100%;
+    height: 100%;
+}
+.taskerAddTaskSecCls {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.inputfieldTaskerCls {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.taskerSpecFuncSecCls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.taskerSpecFuncTaskerCls input[type="file"], .inputfieldTaskerRadioOptCls input[type="radio"] {
+    display: none;
+}
+.inputfieldTaskerRadioHeadOptCls {
+    display: flex;
+    flex-direction: row;
+}
+.taskerInputParentCls {
+    padding: 10px;
+    background-color: #3be500;
+    border-bottom: 2px solid #00a000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.taskerSecHeadCls {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+.taskerDisplayTaskParentCls {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.taskTitleCls p {
+    margin: 0px;
+}
+.taskDisItemParentCls {
+    display: flex;
+    flex: 30%;
+    height: fit-content;
+}

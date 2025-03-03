@@ -20,14 +20,24 @@
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label class="taskInputTaskImpoLblCls">Enter task Intensity</label>
-                        <input [(ngModel)]="taskIntensity" type="radio" id="Low" name="taskImportance" value="Low">
-                        <label for="Low">Low</label><br>
-                        <input [(ngModel)]="taskIntensity" type="radio" id="Medium" name="taskImportance" value="Medium">
-                        <label for="Medium">Medium</label><br>
-                        <input [(ngModel)]="taskIntensity" type="radio" id="High" name="taskImportance" value="High">
-                        <label for="High">High</label><br>
-                        <input [(ngModel)]="taskIntensity" type="radio" id="Urgent" name="taskImportance" value="Urgent">
-                        <label for="Urgent">Urgent</label>
+                        <div class="inputfieldTaskerRadioHeadOptCls">
+                            <div class="inputfieldTaskerRadioOptCls">
+                                <input [(ngModel)]="taskIntensity" type="radio" id="Low" name="taskImportance" value="Low">
+                                <label for="Low">Low</label>
+                            </div>
+                            <div class="inputfieldTaskerRadioOptCls">
+                                <input [(ngModel)]="taskIntensity" type="radio" id="Medium" name="taskImportance" value="Medium">
+                                <label for="Medium">Medium</label>
+                            </div>
+                            <div class="inputfieldTaskerRadioOptCls">
+                                <input [(ngModel)]="taskIntensity" type="radio" id="High" name="taskImportance" value="High">
+                                <label for="High">High</label>
+                            </div>
+                            <div class="inputfieldTaskerRadioOptCls">
+                                <input [(ngModel)]="taskIntensity" type="radio" id="Urgent" name="taskImportance" value="Urgent">
+                                <label for="Urgent">Urgent</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label for="taskTheme">Choose task theme:</label>
