@@ -5,48 +5,52 @@
                 <div class="taskerAddTaskSecCls">
                     <div class="inputfieldTaskerCls">
                         <label for="taskInputField" class="taskInputFieldLblCls">Enter your task</label>
-                        <input placeholder="Enter your task" type="text" id="taskInputField" name="taskInputField"
+                        <input [(ngModel)]="taskName" placeholder="Enter your task" type="text" id="taskInputField" name="taskInputField"
                             class="taskInputFieldCls">
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label for="taskDateField" class="taskDateFieldLblCls">Enter Deadline Date</label>
-                        <input placeholder="Select Deadline Date" type="date" id="taskDateField" name="taskDateField"
+                        <input [(ngModel)]="taskEndDate" placeholder="Select Deadline Date" type="date" id="taskDateField" name="taskDateField"
                             class="taskDateFieldCls">
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label for="taskTimeField" class="taskInputFieldLblCls">Enter deadline time</label>
-                        <input placeholder="Enter Deadline Time" type="time" id="taskTimeField" name="taskTimeField"
+                        <input [(ngModel)]="taskEndTime" placeholder="Enter Deadline Time" type="time" id="taskTimeField" name="taskTimeField"
                             class="taskInputFieldCls">
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label class="taskInputTaskImpoLblCls">Enter task Intensity</label>
-                        <input type="radio" id="Low" name="taskImportance" value="Low">
+                        <input [(ngModel)]="taskIntensity" type="radio" id="Low" name="taskImportance" value="Low">
                         <label for="Low">Low</label><br>
-                        <input type="radio" id="Medium" name="taskImportance" value="Medium">
+                        <input [(ngModel)]="taskIntensity" type="radio" id="Medium" name="taskImportance" value="Medium">
                         <label for="Medium">Medium</label><br>
-                        <input type="radio" id="High" name="taskImportance" value="High">
+                        <input [(ngModel)]="taskIntensity" type="radio" id="High" name="taskImportance" value="High">
                         <label for="High">High</label><br>
-                        <input type="radio" id="Urgent" name="taskImportance" value="Urgent">
+                        <input [(ngModel)]="taskIntensity" type="radio" id="Urgent" name="taskImportance" value="Urgent">
                         <label for="Urgent">Urgent</label>
                     </div>
                     <div class="inputfieldTaskerCls">
                         <label for="taskTheme">Choose task theme:</label>
-                        <select name="taskTheme" id="taskTheme">
+                        <select [(ngModel)]="taskThemeSet" name="taskTheme" id="taskTheme">
                             <option *ngFor="let theme of taskThemes" [value]="theme" [ngClass]="'todo' + theme + 'ThemeCls'">
                                 {{ theme }}
                             </option>
                         </select>
                     </div>
                     <div class="inputfieldTaskerCls">
-                        <button class="addTaskTodoBtnCls" id="addTaskTodoBtn" name="addTaskTodoBtn">Add task</button>
+                        <button (click)="addTask($event)" class="addTaskTodoBtnCls" id="addTaskTodoBtn" name="addTaskTodoBtn">Add task</button>
                     </div>
                 </div>
                 <div class="taskerSpecFuncSecCls">
                     <div class="taskerSpecFuncTaskerCls">
-                        <button class="specFuncTaskTodoBtnCls" id="importTaskTodoBtn" name="importTaskTodoBtn">Import task</button>
+                        <label for="taskerSpecFuncBtn" class="taskerSpecFuncBtnLblCls">Import Task</label>
+                        <input id="taskerSpecFuncBtn" name="taskerSpecFuncBtn" class="taskerSpecFuncBtnCls" type="file" (change)="importTask($event)" accept=".json" />
                     </div>
                     <div class="taskerSpecFuncTaskerCls">
-                        <button class="specFuncTaskTodoBtnCls" id="exportTaskTodoBtn" name="exportTaskTodoBtn">Export task</button>
+                        <button (click)="exportTask($event)" class="specFuncTaskTodoBtnCls" id="exportTaskTodoBtn" name="exportTaskTodoBtn">Export task</button>
+                    </div>
+                    <div class="taskerResetTaskerCls">
+                        <button (click)="resetTask($event)" class="resetTaskTodoBtnCls" id="taskerResetTasker" name="taskerResetTasker">Reset task</button>
                     </div>
                 </div>
             </div>
@@ -57,8 +61,7 @@
                         <div class="taskIntensityCls"><p>{{task.intensity}}</p></div>
                         <div class="taskBtnGroupCls">
                             <div class="taskBtnCollectionCls">
-                                <button class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone">Done</button>
-                                <button class="taskBtnDeleteCls" id="taskBtnDelete" name="taskBtnDelete">Delete</button>
+                                <button (click)="taskCompleted($event, task.task)" class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone">Done</button>
                             </div>
                         </div>
                     </div>
