@@ -216,11 +216,11 @@ body, main, section {
     height: 25px;
     padding: 5px;
     border-radius: 10px 10px 0px 0px;
-    background-color: #e9ff30;
+    background-color: #ff8a00;
     content: " ";
     display: block;
     position: absolute;
-    box-shadow: inset 0px 0px 9px 4px #95a900;
+    box-shadow: inset 0px 0px 9px 4px #a75a00;
     top: -35px;
     right: 20px;
     content: " ";
