@@ -85,7 +85,7 @@ export class TaskpageComponent {
       intensity: "",
       theme: ""
     }
-    if (this.taskName != "" && this.taskEndDate != "" && this.taskEndTime != "" && this.taskIntensity != "" && this.taskThemeSet != "") {
+    if (this.taskName != "" && this.taskIntensity != "" && this.taskThemeSet != "") {
       const obj = {...tempoStore};
       obj.task = this.taskName;
       obj.endDate = this.taskEndDate;

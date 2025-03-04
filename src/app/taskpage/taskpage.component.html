@@ -8,7 +8,7 @@
                         <input [(ngModel)]="taskName" placeholder="Enter your task" type="text" id="taskInputField" name="taskInputField"
                             class="taskInputFieldCls">
                     </div>
-                    <div class="inputfieldTaskerCls">
+                    <!-- <div class="inputfieldTaskerCls">
                         <label for="taskDateField" class="taskDateFieldLblCls">Enter Deadline Date</label>
                         <input [(ngModel)]="taskEndDate" placeholder="Select Deadline Date" type="date" id="taskDateField" name="taskDateField"
                             class="taskDateFieldCls">
@@ -17,42 +17,42 @@
                         <label for="taskTimeField" class="taskInputFieldLblCls">Enter deadline time</label>
                         <input [(ngModel)]="taskEndTime" placeholder="Enter Deadline Time" type="time" id="taskTimeField" name="taskTimeField"
                             class="taskInputFieldCls">
-                    </div>
-                    <div class="inputfieldTaskerCls">
+                    </div> -->
+                    <div class="inputfieldTaskerCls inputFieldChooseIntensityCls">
                         <label class="taskInputTaskImpoLblCls">Enter task Intensity</label>
                         <div class="inputfieldTaskerRadioHeadOptCls">
-                            <div class="inputfieldTaskerRadioOptCls">
+                            <div class="inputfieldTaskerRadioOptCls taskerThemeBtnLogoCls taskerLowThemeLogoCls">
                                 <input [(ngModel)]="taskIntensity" type="radio" id="Low" name="taskImportance" value="Low">
                                 <label for="Low">Low</label>
                             </div>
-                            <div class="inputfieldTaskerRadioOptCls">
+                            <div class="inputfieldTaskerRadioOptCls taskerThemeBtnLogoCls taskerMediumThemeLogoCls">
                                 <input [(ngModel)]="taskIntensity" type="radio" id="Medium" name="taskImportance" value="Medium">
                                 <label for="Medium">Medium</label>
                             </div>
-                            <div class="inputfieldTaskerRadioOptCls">
+                            <div class="inputfieldTaskerRadioOptCls taskerThemeBtnLogoCls taskerHighThemeLogoCls">
                                 <input [(ngModel)]="taskIntensity" type="radio" id="High" name="taskImportance" value="High">
                                 <label for="High">High</label>
                             </div>
-                            <div class="inputfieldTaskerRadioOptCls">
+                            <div class="inputfieldTaskerRadioOptCls taskerThemeBtnLogoCls taskerUrgentThemeLogoCls">
                                 <input [(ngModel)]="taskIntensity" type="radio" id="Urgent" name="taskImportance" value="Urgent">
                                 <label for="Urgent">Urgent</label>
                             </div>
                         </div>
                     </div>
-                    <div class="inputfieldTaskerCls">
-                        <label for="taskTheme">Choose task theme:</label>
+                    <div class="inputfieldTaskerCls inputFieldChooseThemeCls">
+                        <label for="taskTheme">Choose theme:</label>
                         <select [(ngModel)]="taskThemeSet" name="taskTheme" id="taskTheme">
                             <option *ngFor="let theme of taskThemes" [value]="theme" [ngClass]="'todo' + theme + 'ThemeCls'">
                                 {{ theme }}
                             </option>
                         </select>
                     </div>
-                    <div class="inputfieldTaskerCls">
+                    <div class="inputfieldTaskerCls inputFieldAddBtnCls">
                         <button (click)="addTask($event)" class="addTaskTodoBtnCls" id="addTaskTodoBtn" name="addTaskTodoBtn">Add task</button>
                     </div>
                 </div>
                 <div class="taskerSpecFuncSecCls">
-                    <div class="taskerSpecFuncTaskerCls">
+                    <div class="taskerSpecFuncTaskerImportCls">
                         <label for="taskerSpecFuncBtn" class="taskerSpecFuncBtnLblCls">Import Task</label>
                         <input id="taskerSpecFuncBtn" name="taskerSpecFuncBtn" class="taskerSpecFuncBtnCls" type="file" (change)="importTask($event)" accept=".json" />
                     </div>
@@ -64,16 +64,17 @@
                     </div>
                 </div>
             </div>
-            <div class="taskerDisplayTaskParentCls">
-                <div *ngFor="let task of taskList" class="todoTaskHeadCls" [ngClass]="'todoTasker' + task.theme + 'ThemeHeadCls todoTasker'+ task.intensity + 'IntenseHeadCls'">
-                    <div class="taskCardCls" [ngClass]="'todoIntenseTaskComLogo todo' + task.theme + 'ThemeLogoCls'"></div>
-                    <div class="taskDisItemParentCls" [ngClass]="'todo' + task.theme + 'ThemeCls'">
-                        <div class="taskCardCls" [ngClass]="'todo' + task.intensity + 'IntensityCls'">
-                            <div class="taskTitleCls"><p>{{task.task}}</p></div>
-                            <div class="taskIntensityCls"><p>{{task.intensity}}</p></div>
-                            <div class="taskBtnGroupCls">
-                                <div class="taskBtnCollectionCls">
-                                    <button (click)="taskCompleted($event, task.task)" class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone">Done</button>
+            <div class="taskerDisplayAreaHeadCls">
+                <div class="taskerDisplayTaskParentCls">
+                    <div *ngFor="let task of taskList" class="todoTaskHeadCls" [ngClass]="'todoTasker' + task.theme + 'ThemeHeadCls todoTasker'+ task.intensity + 'IntenseHeadCls'">
+                        <div class="taskCardCls" [ngClass]="'todoIntenseTaskComLogo todo' + task.theme + 'ThemeLogoCls'"></div>
+                        <div class="taskDisItemParentCls" [ngClass]="'todo' + task.theme + 'ThemeCls'">
+                            <div class="taskCardContCls" [ngClass]="'todo' + task.intensity + 'IntensityCls'">
+                                <div class="taskTitleCls"><p>{{task.task}}</p></div>
+                                <div class="taskBtnGroupCls">
+                                    <div class="taskBtnCollectionCls">
+                                        <button (click)="taskCompleted($event, task.task)" class="taskBtnDoneCls" id="taskBtnDone" name="taskBtnDone"> </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
